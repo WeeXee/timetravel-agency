@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeTravel Agency — Voyagez à travers le temps</title>
+  <meta name="description" content="TimeTravel Agency — Agence de voyage temporel de luxe. Découvrez Paris 1889, le Crétacé et Florence 1504." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⏳</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="navbar">
+    <a href="#hero" class="nav-logo">⏳ Time<span>Travel</span></a>
+    <ul class="nav-links">
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#reservation">Réserver</a></li>
+      <li><a href="#about">L'Agence</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <!-- Particles -->
+    <div class="hero-particle" style="left:12%;top:18%;opacity:0.2;animation-duration:5s"></div>
+    <div class="hero-particle" style="left:28%;top:72%;opacity:0.15;animation-duration:6.5s;animation-delay:0.5s"></div>
+    <div class="hero-particle" style="left:65%;top:25%;opacity:0.25;animation-duration:4.5s;animation-delay:1s"></div>
+    <div class="hero-particle" style="left:78%;top:68%;opacity:0.18;animation-duration:5.5s;animation-delay:1.5s"></div>
+    <div class="hero-particle" style="left:45%;top:85%;opacity:0.2;animation-duration:6s;animation-delay:0.8s"></div>
+    <div class="hero-particle" style="left:88%;top:40%;opacity:0.12;animation-duration:7s;animation-delay:2s"></div>
+
+    <div class="hero-content">
+      <div class="hero-label">Voyagez à travers le temps</div>
+      <h1 class="hero-title">
+        <span class="accent">Time</span>Travel<br/><span class="gold">Agency</span>
+      </h1>
+      <p class="hero-subtitle">
+        Explorez les époques les plus fascinantes de l'Histoire. Des voyages immersifs, sûrs et inoubliables vers le passé.
+      </p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">
+          Découvrir nos destinations
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">
+          Trouver ma destination
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ DESTINATIONS ═══ -->
+  <section id="destinations" class="section">
+    <div class="anim-hidden">
+      <div class="section-label">Nos destinations</div>
+      <h2 class="section-title">Trois Époques, Trois Aventures</h2>
+      <p class="section-subtitle">
+        Chaque voyage est une porte vers un monde disparu. Choisissez votre époque et laissez-vous transporter.
+      </p>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="cards-grid">
+      <!-- PARIS -->
+      <div class="dest-card anim-hidden" data-dest="paris">
+        <div class="dest-card-video" style="background:linear-gradient(135deg,#1C1614 0%,#2E2018 40%,#1B9E65 100%)">
+          <!-- ══ REMPLACE src="" PAR LE CHEMIN DE TA VIDÉO PARIS ══ -->
+          <video autoplay muted loop playsinline>
+            <source src="VIDEO_PARIS.mp4" type="video/mp4" />
+          </video>
+          <div class="dest-card-overlay" style="background:radial-gradient(ellipse at 30% 50%,rgba(46,196,134,0.12) 0%,transparent 70%)"></div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-epoch">XIXe siècle</div>
+          <h3 class="dest-title">Paris 1889</h3>
+          <p class="dest-subtitle">La Belle Époque</p>
+          <p class="dest-desc">Vivez l'inauguration de la Tour Eiffel lors de l'Exposition Universelle. Flânez sur les Champs-Élysées et savourez la gastronomie parisienne à son apogée.</p>
+          <div class="dest-meta">
+            <span class="dest-price">750 €</span>
+            <span class="dest-dur">✨ 3 jours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRÉTACÉ -->
+      <div class="dest-card anim-hidden" data-dest="cretace" style="transition-delay:0.15s">
+        <div class="dest-card-video" style="background:linear-gradient(135deg,#0D1F15 0%,#15362A 40%,#2EC486 100%)">
+          <!-- ══ REMPLACE src="" PAR LE CHEMIN DE TA VIDÉO CRÉTACÉ (quand tu l'auras) ══ -->
+          <!-- En attendant, un placeholder emoji s'affiche -->
+          <span class="placeholder">🦕</span>
+          <div class="dest-card-overlay" style="background:radial-gradient(ellipse at 70% 30%,rgba(46,196,134,0.12) 0%,transparent 70%)"></div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-epoch">Mésozoïque</div>
+          <h3 class="dest-title">Crétacé</h3>
+          <p class="dest-subtitle">−65 Millions d'années</p>
+          <p class="dest-desc">Explorez un monde primitif peuplé de dinosaures majestueux. Des forêts luxuriantes aux volcans fumants, une aventure au cœur de la nature à l'état brut.</p>
+          <div class="dest-meta">
+            <span class="dest-price">950 €</span>
+            <span class="dest-dur">🌿 2 jours</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FLORENCE -->
+      <div class="dest-card anim-hidden" data-dest="florence" style="transition-delay:0.3s">
+        <div class="dest-card-video" style="background:linear-gradient(135deg,#1E150D 0%,#3A2615 40%,#C9A84C 100%)">
+          <!-- ══ REMPLACE src="" PAR LE CHEMIN DE TA VIDÉO FLORENCE ══ -->
+          <video autoplay muted loop playsinline>
+            <source src="VIDEO_FLORENCE.mp4" type="video/mp4" />
+          </video>
+          <div class="dest-card-overlay" style="background:radial-gradient(ellipse at 50% 60%,rgba(201,168,76,0.1) 0%,transparent 70%)"></div>
+        </div>
+        <div class="dest-card-body">
+          <div class="dest-epoch">XVIe siècle</div>
+          <h3 class="dest-title">Florence 1504</h3>
+          <p class="dest-subtitle">La Renaissance Italienne</p>
+          <p class="dest-desc">Rencontrez Michel-Ange sculptant le David, visitez l'atelier de Léonard de Vinci et découvrez Florence au sommet de la Renaissance artistique.</p>
+          <div class="dest-meta">
+            <span class="dest-price">850 €</span>
+            <span class="dest-dur">🏛️ 4 jours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ QUIZ ═══ -->
+  <section id="quiz" class="section-full">
+    <div class="section-inner">
+      <div class="anim-hidden text-center">
+        <div class="section-label">Recommandation personnalisée</div>
+        <h2 class="section-title" style="text-align:center">Quelle époque est faite pour vous ?</h2>
+        <p class="section-subtitle centered">
+          Répondez à 4 questions et découvrez la destination temporelle idéale selon vos préférences.
+        </p>
+      </div>
+      <div class="section-line"></div>
+
+      <div class="anim-hidden">
+        <div id="quiz-area" class="quiz-container">
+          <div class="quiz-intro">
+            <div class="icon">🧭</div>
+            <h3 class="quiz-question" style="margin-bottom:14px">Trouvez votre destination idéale</h3>
+            <p style="font-size:0.95rem;font-weight:300;color:var(--grey);margin-bottom:32px;line-height:1.7">
+              Répondez à 4 questions rapides et découvrez la destination temporelle parfaite pour vous.
+            </p>
+            <button class="btn-primary" id="quiz-start-btn">Commencer le quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESERVATION ═══ -->
+  <section id="reservation" class="section">
+    <div class="anim-hidden text-center">
+      <div class="section-label">Réservation</div>
+      <h2 class="section-title" style="text-align:center">Réservez votre voyage temporel</h2>
+      <p class="section-subtitle centered">
+        Choisissez votre destination, sélectionnez une date et embarquez pour l'aventure.
+      </p>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="anim-hidden">
+      <form id="resa-form" class="resa-form">
+        <div class="resa-field">
+          <label for="resa-dest">Destination</label>
+          <select id="resa-dest" required>
+            <option value="">— Choisissez une destination —</option>
+            <option value="paris">🗼 Paris 1889 — La Belle Époque (750 €)</option>
+            <option value="cretace">🦕 Crétacé — −65 Millions d'années (950 €)</option>
+            <option value="florence">🎨 Florence 1504 — La Renaissance (850 €)</option>
+          </select>
+        </div>
+        <div class="resa-row">
+          <div class="resa-field">
+            <label for="resa-date">Date de départ</label>
+            <input type="date" id="resa-date" required />
+          </div>
+          <div class="resa-field">
+            <label for="resa-travelers">Voyageurs</label>
+            <select id="resa-travelers">
+              <option value="1">1 voyageur</option>
+              <option value="2" selected>2 voyageurs</option>
+              <option value="3">3 voyageurs</option>
+              <option value="4">4 voyageurs</option>
+              <option value="5">5 voyageurs</option>
+              <option value="6">6 voyageurs</option>
+            </select>
+          </div>
+        </div>
+        <div class="resa-row">
+          <div class="resa-field">
+            <label for="resa-name">Nom complet</label>
+            <input type="text" id="resa-name" placeholder="Votre nom" required />
+          </div>
+          <div class="resa-field">
+            <label for="resa-email">Email</label>
+            <input type="email" id="resa-email" placeholder="votre@email.com" required />
+          </div>
+        </div>
+        <div class="resa-submit">
+          <button type="submit" class="btn-primary" style="width:100%">Confirmer la réservation</button>
+        </div>
+      </form>
+      <div id="resa-confirm" class="resa-confirm" style="display:none"></div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section id="about" class="section">
+    <div class="anim-hidden">
+      <div class="section-label">L'agence</div>
+      <h2 class="section-title">Pourquoi TimeTravel Agency ?</h2>
+      <p class="section-subtitle">
+        Pionniers du voyage temporel depuis 2035, nous rendons l'Histoire accessible en toute sécurité.
+      </p>
+    </div>
+    <div class="section-line"></div>
+
+    <div class="about-grid">
+      <div class="about-card anim-hidden">
+        <div class="icon">🛡️</div>
+        <h4>Sécurité Absolue</h4>
+        <p>Garantie retour sain et sauf. Nos capsules temporelles sont certifiées et nos guides formés pour chaque époque.</p>
+      </div>
+      <div class="about-card anim-hidden" style="transition-delay:0.1s">
+        <div class="icon">👔</div>
+        <h4>Immersion Totale</h4>
+        <p>Costumes d'époque fournis, briefing culturel complet 48h avant le départ. Vivez chaque instant comme un local.</p>
+      </div>
+      <div class="about-card anim-hidden" style="transition-delay:0.2s">
+        <div class="icon">🌟</div>
+        <h4>Service Premium</h4>
+        <p>Groupes de 6 personnes maximum, hébergement d'époque soigneusement sélectionné, guide personnel dédié.</p>
+      </div>
+      <div class="about-card anim-hidden" style="transition-delay:0.3s">
+        <div class="icon">🤖</div>
+        <h4>IA Personnalisée</h4>
+        <p>Notre assistant intelligent vous aide à choisir la destination parfaite selon vos goûts et personnalise votre expérience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-logo">⏳ TimeTravel Agency</div>
+    <p class="footer-text">Voyagez à travers le temps en toute sécurité depuis 2035.</p>
+    <p class="footer-copy">© 2035 TimeTravel Agency — Projet pédagogique M1/M2 Digital & IA</p>
+  </footer>
+
+  <!-- ═══ MODAL ═══ -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-content" class="modal"></div>
+  </div>
+
+  <!-- ═══ CHATBOT ═══ -->
+  <button id="chat-toggle" class="chat-toggle">💬</button>
+  <div id="chat-window" class="chat-window">
+    <div class="chat-header">
+      <div class="chat-header-dot"></div>
+      <div class="chat-header-info">
+        <div class="chat-header-title">TimeTravel Assistant</div>
+        <div class="chat-header-sub">En ligne • Répond instantanément</div>
+      </div>
+    </div>
+    <div id="chat-messages" class="chat-messages"></div>
+    <div id="chat-faq" class="chat-faq"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,199 +1,140 @@
-#  TimeTravel Agency — Webapp Interactive
+# TimeTravel Agency — Webapp Interactive
 
-Webapp interactive pour **TimeTravel Agency**, une agence de voyage temporel fictive de luxe. Le site permet aux visiteurs de découvrir 3 destinations temporelles, d'interagir avec un agent conversationnel IA, et de recevoir une recommandation personnalisée via un quiz intelligent.
+Webapp interactive pour **TimeTravel Agency**, une agence de voyage temporel fictive de luxe. Le site permet aux visiteurs de decouvrir 3 destinations temporelles, d'interagir avec un agent conversationnel, et de recevoir une recommandation personnalisee via un quiz intelligent.
 
-> Projet pédagogique — M1/M2 Digital & IA — Projet supervisé IA, Session 2
-
----
-
-## Équipe    
-
-| Nom | Prénom |
-|-----|--------|
-| Cabée | Pauline |
-| Roth | Simon |
-| Gilbert | Robin |
-| Menou | Lucas |
+**Projet pedagogique — M1/M2 Digital & IA — Projet supervise IA, Session 2**
 
 ---
 
-## Objectif
+## Equipe
 
-Développer une webapp moderne et interactive mettant en scène l'agence TimeTravel Agency et ses 3 destinations temporelles, avec des fonctionnalités alimentées par l'intelligence artificielle :
-
-- **Paris 1889** — La Belle Époque, inauguration de la Tour Eiffel
-- **Crétacé −65M** — L'ère des dinosaures
-- **Florence 1504** — La Renaissance italienne, Michel-Ange et Léonard de Vinci
-
----
-
-## Stack Technique
-
-| Catégorie | Technologie |
-|-----------|-------------|
-| Framework | React (JSX) |
-| Styling | CSS séparé + Google Fonts (DM Serif Display, Libre Baskerville, Sora) |
-| Animations | CSS Keyframes + Intersection Observer API |
-| Chatbot | Chatbot FAQ interactif (boutons cliquables, sans API externe) |
-| Quiz | Algorithme de scoring + résultats personnalisés |
-| Vidéos | MP4 intégrées dans les cartes destinations |
-| Déploiement | GitHub Pages |
-| Versionning | GitHub |
+| Nom       | Prenom   |
+|-----------|----------|
+| Cabee     | Pauline  |
+| Roth      | Simon    |
+| Gilbert   | Robin    |
+| Menou     | Lucas    |
 
 ---
 
-## Features implémentées
+## Contexte et choix techniques
 
-### Phase 1 — Architecture & Planning
-- Structure de navigation définie : Header → Hero → Destinations → Quiz → L'Agence → Footer
-- Design responsive (mobile-first)
-- Maquette et wireframe réalisés via IA générative
+Le site a ete developpe en **HTML, CSS et JavaScript purs**, sans framework ni dependance externe (pas de React, pas de Node, pas de build). Ce choix a ete fait pour plusieurs raisons :
 
-### Phase 2 — Génération de code (Vibe Coding)
-- **Hero section** avec particules flottantes dorées, animations d'entrée progressives et indicateur de scroll
-- **Galerie des 3 destinations** — Cards interactives avec hover effects, gradient backgrounds, modale de détail au clic (prix, durée, points forts)
-- **Design dark mode luxueux** — Palette noir + or (tokens : #0A0A0F, #D4AF37, #F4E5A3)
-- **Animations au scroll** — Fade-in via Intersection Observer, micro-interactions sur les boutons et les cartes
+- **Simplicite de deploiement** : un hebergement statique via GitHub Pages suffit, sans configuration serveur ni pipeline de build.
+- **Facilite de modification** : chaque membre du groupe peut modifier un fichier independamment sans risque de conflit sur l'ensemble du projet.
+- **Transparence du code** : le code est lisible et comprehensible directement, sans couche d'abstraction.
+- **Fiabilite** : aucune dependance a un service tiers (API, CDN critique, serveur backend), le site fonctionne de maniere autonome.
 
-### Phase 3 — Intelligence Artificielle & Agents
-- **Agent conversationnel (Chatbot)** — Widget flottant en bas à droite, connecté à l'API Anthropic Claude. Personnalité configurée : conseiller de voyage temporel, professionnel et chaleureux, expert des 3 destinations. Répond aux questions sur les destinations, les prix, les conseils de voyage, et la FAQ.
-- **Quiz de recommandation personnalisée** — 4 questions sur les préférences du voyageur, algorithme de scoring, puis appel à l'IA pour générer une recommandation personnalisée et immersive.
-
-### Phase 4 — Documentation & Déploiement
-- README complet (ce document)
-- Déploiement sur Vercel
-- Code versionné sur GitHub
+Le deploiement se fait via **GitHub Pages**, directement depuis la branche main du repository.
 
 ---
 
-## Outils IA utilisés (transparence)
+## Architecture du projet
 
-| Usage | Outil / Modèle | Détail |
-|-------|-----------------|--------|
-| Génération du code | Claude (Anthropic) | Génération de la webapp React complète via prompting itératif |
-| Chatbot intégré | API Anthropic — Claude Sonnet | Agent conversationnel en temps réel, system prompt personnalisé |
-| Recommandation quiz | API Anthropic — Claude Sonnet | Génération de texte personnalisé post-quiz |
-| Visuels destinations | _À compléter (Midjourney / DALL-E / Flux)_ | Images hero des 3 destinations |
-| Vibe coding | Bolt.new | Setup projet, itérations design, déploiement |
-
----
-
-## Structure du projet
+Le projet est structure en trois fichiers distincts, chacun avec une responsabilite claire :
 
 ```
 timetravel-agency/
-├── index.html           # Page principale
-├── style.css            # Styles (DA anthracite + émeraude + doré)
-├── script.js            # Logique (chatbot, quiz, réservation, animations)
-├── VIDEO_PARIS.mp4      # Vidéo destination Paris
-├── VIDEO_FLORENCE.mp4   # Vidéo destination Florence
-├── README.md            # Ce fichier
+    index.html           Structure HTML de la page (sections, navigation, contenu)
+    style.css            Design et mise en forme (DA, responsive, animations CSS)
+    script.js            Logique interactive (chatbot, quiz, reservation, animations scroll)
+    VIDEO_PARIS.mp4      Video destination Paris 1889
+    VIDEO_FLORENCE.mp4   Video destination Florence 1504
+    VIDEO_CRETACE.mp4    Video destination Cretace
+    README.md            Documentation du projet
 ```
+
+Cette separation permet de travailler sur le design sans toucher a la logique, et inversement. Les videos sont hebergees directement dans le repository pour eviter toute dependance a un service externe.
 
 ---
 
-## Installation & Lancement
+## Fonctionnalites implementees
 
-### Prérequis
-- Node.js (v18+)
-- npm ou yarn
+### Page d'accueil et navigation
 
-### Lancement local
+Le site s'ouvre sur une hero section avec des animations d'entree progressives (apparition du titre, du sous-titre et des boutons d'action). Une barre de navigation fixe permet d'acceder directement aux differentes sections. L'ensemble est responsive et adapte au mobile.
 
-```bash
-# Cloner le repository
-git clone https://github.com/VOTRE-USERNAME/timetravel-agency.git
-cd timetravel-agency
+### Galerie des destinations
 
-# Installer les dépendances
-npm install
+Trois cartes presentent les destinations temporelles proposees par l'agence :
 
-# Lancer le serveur de développement
-npm run dev
-```
+- **Paris 1889** — La Belle Epoque, inauguration de la Tour Eiffel, Exposition Universelle. 750 euros, 3 jours.
+- **Cretace, -65 millions d'annees** — Observation de dinosaures, forets geantes, volcans actifs. 950 euros, 2 jours.
+- **Florence 1504** — La Renaissance italienne, Michel-Ange, Leonard de Vinci. 850 euros, 4 jours.
 
-Le site sera accessible sur `http://localhost:5173` (ou le port indiqué).
+Chaque carte integre une video MP4 en lecture automatique (muette, en boucle) et ouvre une modale detaillee au clic, avec les points forts de la destination et un acces direct a la reservation.
 
-### Via Bolt.new (méthode la plus simple)
-1. Ouvrir [bolt.new](https://bolt.new)
-2. Créer un nouveau projet React
-3. Remplacer le contenu de `App.jsx` par le code fourni
-4. Le site se lance automatiquement dans le preview
+### Agent conversationnel (Chatbot FAQ)
 
----
+Un widget de chat flottant est accessible en permanence depuis le coin inferieur droit de la page. Il fonctionne sur un systeme de navigation par boutons : l'utilisateur clique sur des questions predefinies et recoit des reponses contextuelles.
 
-## Déploiement
+Le chatbot couvre les sujets suivants : presentation detaillee de chaque destination, grille tarifaire complete, processus de reservation, securite des voyages temporels, durees et points de depart, questions frequentes (bagages, vetements, politique d'annulation).
 
-Le site est déployé sur Vercel :
-🔗 **URL : _[À compléter avec votre URL Vercel]_**
+Ce systeme a ete choisi plutot qu'une API externe pour garantir un fonctionnement fiable sans dependance a un service tiers, et pour assurer une experience utilisateur fluide quel que soit le contexte de consultation.
 
----
+### Quiz de recommandation
 
-## Prompts documentés
+Un quiz interactif en 4 questions analyse les preferences du visiteur (type d'experience, periode historique, environnement, activites) et recommande la destination la plus adaptee. Un algorithme de scoring attribue des points a chaque destination en fonction des reponses, puis affiche un resultat personnalise avec une description immersive.
 
-### Prompt principal — Génération de la webapp
-```
-Créer une webapp React complète pour TimeTravel Agency, agence de voyage temporel fictive.
-Design : dark mode luxueux, noir + or (#D4AF37).
-Typographies : Playfair Display pour les titres, Cormorant Garamond pour les accents,
-Outfit pour le corps.
+### Formulaire de reservation
 
-Features :
-- Hero section avec particules flottantes et animations d'entrée
-- 3 cartes destinations (Paris 1889, Crétacé -65M, Florence 1504) avec modale de détail
-- Quiz de recommandation IA (4 questions, scoring, appel API pour recommandation)
-- Chatbot IA flottant avec personnalité de conseiller voyage temporel
-- Section "L'Agence" avec valeurs
-- Footer
-- Animations au scroll (Intersection Observer)
-- Tout en un seul fichier JSX
-```
+Une section dediee permet de simuler une reservation complete : selection de la destination, choix de la date de depart via un calendrier, nombre de voyageurs (1 a 6), nom et email. A la validation, une confirmation visuelle s'affiche avec le recapitulatif detaille du voyage (destination, date, prix, nombre de voyageurs). Le formulaire est fonctionnel cote interface mais ne transmet pas de donnees a un serveur (projet fictif).
 
-### Prompt — Personnalité du chatbot
-```
-Tu es l'assistant virtuel de TimeTravel Agency, une agence de voyage temporel de luxe.
-Ton rôle : conseiller les clients sur les meilleures destinations temporelles.
-Ton ton : professionnel mais chaleureux, passionné d'histoire, enthousiaste sans
-être trop familier.
-Tu connais parfaitement Paris 1889, le Crétacé -65M et Florence 1504.
-Tu peux suggérer des destinations selon les intérêts du client.
-```
+### Section "L'Agence"
 
-### Prompt — Recommandation quiz
-```
-Tu es un conseiller de voyage temporel passionné. Génère une recommandation
-personnalisée en 3-4 phrases, enthousiaste et immersive, expliquant pourquoi
-cette destination est parfaite. Utilise un ton chaleureux et poétique.
-```
+Quatre cartes presentent les valeurs de l'agence : securite, immersion totale, service premium et personnalisation par intelligence artificielle.
 
 ---
 
-## Design System
+## Direction artistique
 
-| Token | Valeur | Usage |
-|-------|--------|-------|
-| Or principal | `#D4AF37` | Accents, CTA, titres hero |
-| Or clair | `#F4E5A3` | Highlights, badges |
-| Or foncé | `#B8960C` | Gradients, hover states |
-| Noir profond | `#0A0A0F` | Background principal |
-| Noir secondaire | `#111118` | Cards, modale, chat |
-| Noir tertiaire | `#1A1A24` | Inputs, options quiz |
-| Gris | `#8A8A9A` | Texte secondaire |
-| Blanc cassé | `#F0EDE6` | Texte principal |
+Le design suit une direction artistique sombre et raffinee, articulee autour de trois couleurs :
+
+| Element            | Couleur     | Usage                                      |
+|--------------------|-------------|---------------------------------------------|
+| Gris anthracite    | #17181C     | Fond principal, surfaces                    |
+| Emeraude           | #2EC486     | Accents, boutons, elements interactifs      |
+| Dore discret       | #C9A84C     | Prix, details premium, touche de luxe       |
+
+Les typographies utilisees sont :
+
+- **DM Serif Display** pour les titres (serif elegant)
+- **Libre Baskerville** pour les accents et labels (serif classique, italique)
+- **Sora** pour le corps de texte et l'interface (sans-serif moderne, leger)
+
+Les animations sont volontairement subtiles : apparitions progressives au scroll via Intersection Observer, transitions douces sur les interactions, et particules flottantes discretes sur la hero section.
 
 ---
 
-## Crédits
+## Outils IA utilises
 
-- **API IA** : [Anthropic](https://anthropic.com) — Claude Sonnet
-- **Fonts** : Google Fonts (Playfair Display, Cormorant Garamond, Outfit)
-- **Déploiement** : [Vercel](https://vercel.com)
-- **Vibe Coding** : [Bolt.new](https://bolt.new) (StackBlitz)
-- **Visuels** : _À compléter_
+| Usage                        | Outil                          |
+|------------------------------|--------------------------------|
+| Generation du code           | Claude (Anthropic)             |
+| Generation des visuels       | A completer                    |
+| Generation des videos        | A completer                    |
+
+Le code a ete genere par IA puis revu, adapte et structure manuellement par l'equipe. Les reponses du chatbot et les textes du quiz ont ete rediges specifiquement pour le contexte du projet.
+
+---
+
+## Deploiement
+
+Le site est heberge sur GitHub Pages.
+
+**URL du site** : *(a completer avec votre URL GitHub Pages)*
+
+Procedure de deploiement :
+
+1. Les fichiers sont pushes sur la branche main du repository.
+2. Dans les parametres du repository (Settings puis Pages), GitHub Pages est configure pour deployer depuis la branche main, dossier racine.
+3. Le site est accessible sous quelques minutes a l'adresse attribuee par GitHub.
+
+Aucun build, aucune installation, aucune commande n'est necessaire. Le site fonctionne directement depuis les fichiers statiques.
 
 ---
 
 ## Licence
 
-Projet pédagogique — M1/M2 Digital & IA
-Utilisation non commerciale uniquement.
+Projet pedagogique — M1/M2 Digital & IA. Utilisation non commerciale uniquement.

@@ -110,7 +110,7 @@ function openModal(id) {
   const d = destData[id];
   if (!d) return;
   const overlay = document.getElementById("modal-overlay");
-  const videoHTML = d.video
+const videoHTML = d.video
     ? `<video id="modal-video" autoplay loop playsinline style="width:100%;height:100%;object-fit:cover"><source src="${d.video}" type="video/mp4"></video>`
     : `<span class="placeholder">${d.icon}</span>`;
 
@@ -144,8 +144,7 @@ function openModal(id) {
     </div>
   `;
   overlay.classList.remove("hidden");
-   // Activer le son après le clic
-  setTimeout(() => {
+setTimeout(() => {
     const vid = document.getElementById("modal-video");
     if (vid) {
       vid.muted = false;

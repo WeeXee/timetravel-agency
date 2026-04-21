@@ -156,6 +156,11 @@ setTimeout(() => {
 }
 
 function closeModal() {
+  const vid = document.getElementById("modal-video");
+  if (vid) {
+    vid.pause();
+    vid.muted = true;
+  }
   document.getElementById("modal-overlay").classList.add("hidden");
   document.body.style.overflow = "";
 }

@@ -84,7 +84,7 @@ const destData = {
       "Faune préhistorique",
       "Guide paléontologue",
     ],
-    video: "", /* ← AJOUTE TA VIDÉO QUAND TU L'AURAS */
+    video: "VIDEO_CRETACE.mp4",
   },
   florence: {
     title: "Florence 1504",
